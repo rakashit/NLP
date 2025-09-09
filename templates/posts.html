@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recent Hazard Posts</title>
+    <style>
+        table { border-collapse: collapse; width: 80%; margin: 20px auto; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center;">Recent Hazard Posts</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Content</th>
+            <th>Keywords</th>
+            <th>Event Type</th>
+        </tr>
+        {% for row in rows %}
+        <tr>
+            <td>{{ row.post_id }}</td>
+            <td>{{ row.content }}</td>
+            <td>{{ row.detected_keywords }}</td>
+            <td>{{ row.event_type }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

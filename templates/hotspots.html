@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotspot Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f6f9; padding: 20px; }
+        h2 { color: #333; }
+        table { width: 80%; margin: auto; border-collapse: collapse; background: white; box-shadow: 0px 2px 5px rgba(0,0,0,0.1); }
+        th, td { padding: 12px; border: 1px solid #ddd; text-align: center; }
+        th { background: #007BFF; color: white; }
+        .triggered { color: white; background: #28a745; font-weight: bold; }
+        .notrigger { color: white; background: #dc3545; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h2>🔥 Hotspot Detection Dashboard</h2>
+    <table>
+        <tr>
+            <th>Account Type</th>
+            <th>Total Posts</th>
+            <th>Threshold</th>
+            <th>Status</th>
+        </tr>
+        {% for hotspot in hotspots %}
+        <tr>
+            <td>{{ hotspot.account_type }}</td>
+            <td>{{ hotspot.total_posts }}</td>
+            <td>{{ hotspot.threshold }}</td>
+            <td class="{% if hotspot.status == 'HOTSPOT TRIGGERED' %}triggered{% else %}notrigger{% endif %}">
+                {{ hotspot.status }}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

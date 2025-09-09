@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Citizen Hotspot Alerts</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f9f9f9; padding: 20px; text-align: center; }
+        h2 { color: #333; }
+        .alert-box {
+            margin: 20px auto;
+            padding: 20px;
+            width: 60%;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .danger { background: #dc3545; color: white; }
+        .safe { background: #28a745; color: white; }
+    </style>
+</head>
+<body>
+    <h2>🌍 Community Hazard Hotspot Alerts</h2>
+
+    {% if alert %}
+        <div class="alert-box danger">⚠️ ALERT: A hotspot has been detected nearby. Stay alert & follow safety guidelines.</div>
+    {% else %}
+        <div class="alert-box safe">✅ No hotspots detected right now. Stay safe & updated.</div>
+    {% endif %}
+</body>
+</html>
